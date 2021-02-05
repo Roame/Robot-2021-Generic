@@ -1,0 +1,22 @@
+include "../config/ChannelType.fbs";
+
+namespace frc.taurus.logger.generated;
+
+// Table holding a message with a header.
+table Packet {
+  // packet count should increment by for each new packet
+  // so it can be used to check for lost data
+  packet_count : uint;
+
+  // data type enum
+  channel_type : frc.taurus.config.generated.ChannelType; // name of the FlatBuffer that defines the payload
+
+  queue_size : ubyte; // number of messages in queue before read
+
+  // Nested flatbuffer.
+  payload : [ubyte] (required);
+}
+
+root_type Packet;
+
+file_identifier "PCKT";

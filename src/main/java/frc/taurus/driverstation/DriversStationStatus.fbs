@@ -1,0 +1,20 @@
+namespace frc.taurus.driverstation.generated;
+
+table DriverStationStatus {
+  // Timestamp is the first element of every message
+  timestamp : double;
+
+  enabled : bool;
+  autonomous : bool;
+  teleop : bool;
+  test : bool;
+  ds_attached : bool;
+  fms_attached : bool;
+  game_specific_message : string;
+  match_time : double;
+}
+
+root_type DriverStationStatus;
+
+file_identifier "DSST";
+

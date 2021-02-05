@@ -1,0 +1,16 @@
+namespace frc.taurus.config.generated;
+
+// Every entry in this enumeration also needs to be added to the Config enumeration
+
+enum ChannelType : byte {
+  DriverStationStatus,
+
+  JoystickStatus, 
+  JoystickGoal,
+
+  DrivetrainInput,
+  DrivetrainGoal,
+  DrivetrainStatus,
+  DrivetrainOutput
+  }
+

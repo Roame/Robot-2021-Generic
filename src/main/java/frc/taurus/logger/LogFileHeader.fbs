@@ -1,0 +1,24 @@
+include "../config/Configuration.fbs";
+
+namespace frc.taurus.logger.generated;
+
+
+// A log file is a sequence of size prefixed flatbuffers.
+// The first flatbuffer will be the LogFileHeader, followed by an arbitrary
+// number of MessageHeaders.
+//
+// The log file starts at the time demarcated in the header on the monotonic
+// clock.  There will be any number of messages per channel logged before the
+// start time.  These messages are logged so that fetchers can retrieve the
+// state of the system at the start of the logfile for things like capturing
+// parameters.  In replay, they should be made available to fetchers, but not
+// trigger watchers.
+
+table LogFileHeader {
+  timestamp : double;             // timestamp the log file was opened
+  configuration : frc.taurus.config.generated.Configuration (required);  // configuration of channels
+}
+
+root_type LogFileHeader;
+
+file_identifier "FLOG";

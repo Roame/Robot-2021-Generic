@@ -1,0 +1,28 @@
+namespace frc.taurus.drivetrain.generated;
+
+
+table DrivetrainInput {
+  // Timestamp is the first element of every message
+  timestamp :  double;
+
+   left_distance : float;   // inches 
+  right_distance : float;   // inches 
+
+   left_velocity : float;   // inches/sec 
+  right_velocity : float;   // inches/sec
+
+   left_voltage : float;
+  right_voltage : float;
+
+   left_bus_voltage : float;
+  right_bus_voltage : float;
+
+   left_current : float;
+  right_current : float;
+
+  gyro_angle_rad : float;  // radians
+}
+
+root_type DrivetrainInput;
+
+file_identifier "DRVI";

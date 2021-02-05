@@ -1,0 +1,25 @@
+namespace frc.taurus.joystick.generated;
+
+// up to 6 axes
+struct AxisVector {
+  axis : [float:6];
+}
+
+// up to 16 buttons
+struct ButtonVector {
+  button : [bool:16];
+}
+
+table JoystickStatus {
+  // Timestamp is the first element of every message
+  timestamp : double;
+
+  port : int;
+  axes : AxisVector (required);
+  buttons : ButtonVector (required);
+  pov:int = -1;
+}
+
+root_type JoystickStatus;
+
+file_identifier "JOYS";

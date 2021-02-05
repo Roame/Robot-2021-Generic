@@ -1,0 +1,9 @@
+namespace frc.taurus.messages.generated;
+
+table TestMessage1 {
+  int_value : int;
+}
+
+root_type TestMessage1;
+
+file_identifier "TST1";
